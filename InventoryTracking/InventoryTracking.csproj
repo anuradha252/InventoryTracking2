@@ -89,7 +89,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppCode\" />
+    <Folder Include="AppCode\BO\" />
+    <Folder Include="AppCode\DAL\" />
+    <Folder Include="AppCode\Helper\" />
+    <Folder Include="css\" />
+    <Folder Include="scripts\" />
+    <Folder Include="secure\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
