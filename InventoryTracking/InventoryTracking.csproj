@@ -79,6 +79,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppCode\BO\inventory_item.cs" />
+    <Compile Include="AppCode\BO\workorder.cs" />
+    <Compile Include="AppCode\DAL\inventory_item.cs" />
+    <Compile Include="AppCode\DAL\workorder.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,8 +93,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppCode\BO\" />
-    <Folder Include="AppCode\DAL\" />
     <Folder Include="AppCode\Helper\" />
     <Folder Include="css\" />
     <Folder Include="scripts\" />
