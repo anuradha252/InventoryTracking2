@@ -43,6 +43,35 @@ namespace BO.AssetInventoryTracking
 			get { return _inventoryID; }
 			set { _inventoryID = value; }
 		}
-	}
+        public List<BO.AssetInventoryTracking.workorder> GetAllworkorder()
+        {
+            return DAL.AssetInventoryTracking.workorder.Instance.GetAllworkorder();
+        }
+
+        public BO.AssetInventoryTracking.workorder GetByIDworkorder(int workorderID)
+        {
+            return DAL.AssetInventoryTracking.workorder.Instance.GetByIDworkorder(workorderID);
+        }
+        public int Save()
+        {
+            int workorderID = -1;
+            if ((this.inventoryID == -1))
+            {
+                workorderID = DAL.AssetInventoryTracking.workorder.Instance.Addworkorder(this);
+            }
+            else
+            {
+                workorderID = DAL.AssetInventoryTracking.workorder.Instance.Updateworkorder(this);
+            }
+            return workorderID;
+        }
+
+        public int Deleteworkorder(int workorderID)
+        {
+            return DAL.AssetInventoryTracking.workorder.Instance.Deleteworkorder(workorderID);
+        }
+    }
+   
+
 }
 

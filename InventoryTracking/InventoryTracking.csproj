@@ -66,6 +66,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddInventoryItem.aspx" />
+    <Content Include="AddWorkOrder.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -79,6 +81,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddInventoryItem.aspx.cs">
+      <DependentUpon>AddInventoryItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddInventoryItem.aspx.designer.cs">
+      <DependentUpon>AddInventoryItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddWorkOrder.aspx.cs">
+      <DependentUpon>AddWorkOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddWorkOrder.aspx.designer.cs">
+      <DependentUpon>AddWorkOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AppCode\BO\inventory_item.cs" />
     <Compile Include="AppCode\BO\workorder.cs" />
     <Compile Include="AppCode\DAL\inventory_item.cs" />

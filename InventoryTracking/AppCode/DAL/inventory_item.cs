@@ -11,7 +11,20 @@ namespace DAL.AssetInventoryTracking
 {
 	public class inventory_item
 	{
-		public static List<BO.AssetInventoryTracking.inventory_item> GetAllinventory_item()
+        private static inventory_item _instance = null;
+        public static inventory_item Instance
+        {
+            get
+            {
+                if ((_instance == null))
+                {
+                    _instance = new inventory_item();
+                }
+                return _instance;
+            }
+        }
+
+        public List<BO.AssetInventoryTracking.inventory_item> GetAllinventory_item()
 		{
 			List<BO.AssetInventoryTracking.inventory_item> xinventory_itemList = new List<BO.AssetInventoryTracking.inventory_item>();
 			string query = "SELECT [inventoryID],[length_of_warranty],[make],[model],[date_purchased],[percent_change_cost],[status_of_item] FROM dbo.[inventory_item]";
@@ -50,7 +63,7 @@ namespace DAL.AssetInventoryTracking
 			return xinventory_itemList;
 		}
 
-		public static BO.AssetInventoryTracking.inventory_item GetByIDinventory_item(int inventory_itemID)
+		public   BO.AssetInventoryTracking.inventory_item GetByIDinventory_item(int inventory_itemID)
 		{
 			BO.AssetInventoryTracking.inventory_item xinventory_item = new BO.AssetInventoryTracking.inventory_item();
 			string query = "SELECT [inventoryID],[length_of_warranty],[make],[model],[date_purchased],[percent_change_cost],[status_of_item] FROM dbo.[inventory_item] WHERE inventory_itemID=@inventory_itemID";
@@ -88,7 +101,7 @@ namespace DAL.AssetInventoryTracking
 			return xinventory_item;
 		}
 
-		public static int Addinventory_item(BO.AssetInventoryTracking.inventory_item inventory_item)
+		public  int Addinventory_item(BO.AssetInventoryTracking.inventory_item inventory_item)
 		{
 			int inventory_itemID = 0;
 			string query = "INSERT INTO dbo.[inventory_item] ([inventoryID],[length_of_warranty],[make],[model],[date_purchased],[percent_change_cost],[status_of_item]) VALUES ( @inventoryID, @length_of_warranty, @make, @model, @date_purchased, @percent_change_cost, @status_of_item) ; SELECT SCOPE_IDENTITY();";
@@ -112,7 +125,7 @@ namespace DAL.AssetInventoryTracking
 			return inventory_itemID;
 		}
 
-		public static int Deleteinventory_item(int inventory_itemID)
+		public  int Deleteinventory_item(int inventory_itemID)
 		{
 			int RowsAffected = -1;
 			string query = " UPDATE dbo.inventory_item SET IsDeleted = 1 WHERE inventory_itemID=@inventory_itemID ";
@@ -126,7 +139,7 @@ namespace DAL.AssetInventoryTracking
 			return RowsAffected;
 		}
 
-		public static int Updateinventory_item(BO.AssetInventoryTracking.inventory_item inventory_item)
+		public  int Updateinventory_item(BO.AssetInventoryTracking.inventory_item inventory_item)
 		{
 			int RowsAffected = -1;
 			string query = "UPDATE dbo.[inventory_item] SET inventoryID = @inventoryID,length_of_warranty = @length_of_warranty,make = @make,model = @model,date_purchased = @date_purchased,percent_change_cost = @percent_change_cost,status_of_item = @status_of_item WHERE inventory_itemID=@inventory_itemID";

@@ -55,6 +55,33 @@ namespace BO.AssetInventoryTracking
 			get { return _status_of_item; }
 			set { _status_of_item = value; }
 		}
-	}
+        public List<BO.AssetInventoryTracking.inventory_item> GetAllinventory_item()
+        {
+            return DAL.AssetInventoryTracking.inventory_item.Instance.GetAllinventory_item();
+        }
+
+        public BO.AssetInventoryTracking.inventory_item GetByIDinventory_item(int inventory_itemID)
+        {
+            return DAL.AssetInventoryTracking.inventory_item.Instance.GetByIDinventory_item(inventory_itemID);
+        }
+        public int Save()
+        {
+            int inventory_itemID = -1;
+            if ((this.inventoryID == -1))
+            {
+                inventory_itemID = DAL.AssetInventoryTracking.inventory_item.Instance.Addinventory_item(this);
+            }
+            else
+            {
+                inventory_itemID = DAL.AssetInventoryTracking.inventory_item.Instance.Updateinventory_item(this);
+            }
+            return inventory_itemID;
+        }
+
+        public int Deleteinventory_item(int inventory_itemID)
+        {
+            return DAL.AssetInventoryTracking.inventory_item.Instance.Deleteinventory_item(inventory_itemID);
+        }
+    }
 }
 

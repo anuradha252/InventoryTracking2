@@ -11,6 +11,11 @@ namespace InventoryTracking
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            BO.AssetInventoryTracking.inventory_item item = new BO.AssetInventoryTracking.inventory_item();
+            List<BO.AssetInventoryTracking.inventory_item> itemlist = new List<BO.AssetInventoryTracking.inventory_item>();
+            itemlist= item.GetAllinventory_item();
+            gvAssetInventory.DataSource = itemlist;
+            gvAssetInventory.DataBind();
 
         }
     }

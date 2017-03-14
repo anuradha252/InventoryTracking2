@@ -12,7 +12,19 @@ namespace DAL.AssetInventoryTracking
 {
 	public class workorder
 	{
-		public static List<BO.AssetInventoryTracking.workorder> GetAllworkorder()
+        private static workorder _instance = null;
+        public static workorder Instance
+        {
+            get
+            {
+                if ((_instance == null))
+                {
+                    _instance = new workorder();
+                }
+                return _instance;
+            }
+        }
+        public List<BO.AssetInventoryTracking.workorder> GetAllworkorder()
 		{
 			List<BO.AssetInventoryTracking.workorder> xworkorderList = new List<BO.AssetInventoryTracking.workorder>();
 			string query = "SELECT [workorderID],[date_created],[date_completed],[status],[inventoryID] FROM dbo.[workorder]";
@@ -45,7 +57,7 @@ namespace DAL.AssetInventoryTracking
 			return xworkorderList;
 		}
 
-		public static BO.AssetInventoryTracking.workorder GetByIDworkorder(int workorderID)
+		public BO.AssetInventoryTracking.workorder GetByIDworkorder(int workorderID)
 		{
 			BO.AssetInventoryTracking.workorder xworkorder = new BO.AssetInventoryTracking.workorder();
 			string query = "SELECT [workorderID],[date_created],[date_completed],[status],[inventoryID] FROM dbo.[workorder] WHERE workorderID=@workorderID";
@@ -77,7 +89,7 @@ namespace DAL.AssetInventoryTracking
 			return xworkorder;
 		}
 
-		public static int Addworkorder(BO.AssetInventoryTracking.workorder workorder)
+		public int Addworkorder(BO.AssetInventoryTracking.workorder workorder)
 		{
 			int workorderID = 0;
 			string query = "INSERT INTO dbo.[workorder] ([date_created],[date_completed],[status],[inventoryID]) VALUES ( @date_created, @date_completed, @status, @inventoryID) ; SELECT SCOPE_IDENTITY();";
@@ -98,7 +110,7 @@ namespace DAL.AssetInventoryTracking
 			return workorderID;
 		}
 
-		public static int Deleteworkorder(int workorderID)
+		public int Deleteworkorder(int workorderID)
 		{
 			int RowsAffected = -1;
 			string query = " UPDATE dbo.workorder SET IsDeleted = 1 WHERE workorderID=@workorderID ";
@@ -112,7 +124,7 @@ namespace DAL.AssetInventoryTracking
 			return RowsAffected;
 		}
 
-		public static int Updateworkorder(BO.AssetInventoryTracking.workorder workorder)
+		public int Updateworkorder(BO.AssetInventoryTracking.workorder workorder)
 		{
 			int RowsAffected = -1;
 			string query = "UPDATE dbo.[workorder] SET date_created = @date_created,date_completed = @date_completed,status = @status,inventoryID = @inventoryID WHERE workorderID=@workorderID";
