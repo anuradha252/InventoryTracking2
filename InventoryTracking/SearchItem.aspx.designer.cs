@@ -10,7 +10,7 @@
 namespace InventoryTracking {
     
     
-    public partial class AddInventoryItem {
+    public partial class SearchItem {
         
         /// <summary>
         /// form1 control.
@@ -22,58 +22,67 @@ namespace InventoryTracking {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtAddInventoryID control.
+        /// txtInventoryID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddInventoryID;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtInventoryID;
         
         /// <summary>
-        /// txtAddName control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtName;
         
         /// <summary>
-        /// txtAddCost control.
+        /// txtCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddCost;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCost;
         
         /// <summary>
-        /// txtAddDatePurchased control.
+        /// txtDatePurchasedFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtAddDatePurchased;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDatePurchasedFrom;
         
         /// <summary>
-        /// txtAddMake control.
+        /// txtDatePurchasedTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddMake;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDatePurchasedTo;
         
         /// <summary>
-        /// txtAddModel control.
+        /// txtMake control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddModel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtMake;
+        
+        /// <summary>
+        /// txtModel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtModel;
         
         /// <summary>
         /// txtLengthOfWarranty control.
@@ -85,30 +94,57 @@ namespace InventoryTracking {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtLengthOfWarranty;
         
         /// <summary>
-        /// btngetvalue control.
+        /// upradio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btngetvalue;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton upradio;
         
         /// <summary>
-        /// btnsaveNET control.
+        /// downradio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsaveNET;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton downradio;
         
         /// <summary>
-        /// HiddenField control.
+        /// chkwarrantyexpired control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden HiddenField;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox chkwarrantyexpired;
+        
+        /// <summary>
+        /// btnsubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnsubmit;
+        
+        /// <summary>
+        /// btnsearchnet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnsearchnet;
+        
+        /// <summary>
+        /// gvAssetInventory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAssetInventory;
     }
 }

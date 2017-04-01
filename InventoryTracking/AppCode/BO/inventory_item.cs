@@ -19,11 +19,16 @@ namespace BO.AssetInventoryTracking
 			_date_purchased = null;
 			_percent_change_cost = -1;
 			_status_of_item = "";
+            _name = "";
+            _cost = 0;
+
 		}
 		private int _inventoryID;
 		private int _length_of_warranty;
 		private string _make;
-		private string _model;
+        private string _name;
+        private decimal _cost;
+        private string _model;
 		private DateTime? _date_purchased;
 		private int _percent_change_cost;
 		private string _status_of_item;
@@ -35,11 +40,23 @@ namespace BO.AssetInventoryTracking
 			get { return _length_of_warranty; }
 			set { _length_of_warranty = value; }
 		}
-		public string make {
-			get { return _make; }
-			set { _make = value; }
-		}
-		public string model {
+		public string make
+        {
+            get { return _make; }
+            set { _make = value; }
+
+        }
+            public string name  
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public decimal cost
+        {
+            get { return _cost; }
+            set { _cost = value; }
+        }
+        public string model {
 			get { return _model; }
 			set { _model = value; }
 		}
@@ -58,6 +75,10 @@ namespace BO.AssetInventoryTracking
         public List<BO.AssetInventoryTracking.inventory_item> GetAllinventory_item()
         {
             return DAL.AssetInventoryTracking.inventory_item.Instance.GetAllinventory_item();
+        }
+        public List<BO.AssetInventoryTracking.inventory_item> Searchinventory_item(string name, string ID, string make, string model, string lengthwarranty, string cost, string status, string fromdate, string todate)
+        {
+            return DAL.AssetInventoryTracking.inventory_item.Instance.Searchinventory_item(name,ID,make,model,lengthwarranty, cost,status,fromdate,todate);
         }
 
         public BO.AssetInventoryTracking.inventory_item GetByIDinventory_item(int inventory_itemID)
